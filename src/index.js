@@ -1,15 +1,15 @@
 import {app} from "./app.js"
 import dbConnection from "./db/index.js"
 
-import dotenv from "dotenv"
+import dotenv from 'dotenv'
 dotenv.config({
     path:"./.env"
 })
 
 dbConnection()
 .then(()=>{
-    app.listen(3000,()=>{
-        console.log("server is running on 3000");
+    app.listen(process.env.PORT || 4000,()=>{
+        console.log(`server is running on ${process.env.PORT}`);
         
     })
 })
