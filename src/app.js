@@ -11,4 +11,9 @@ app.use(express.urlencoded())
 app.use(express.static("public"))
 
 
+import songRouter from "./routes/songsRoute.js";
+
+app.use('/api/v1/songs' , songRouter)
+
+
 export {app}
