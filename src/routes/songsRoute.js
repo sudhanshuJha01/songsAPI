@@ -4,7 +4,7 @@ import {postSong ,getSongs} from "../controllers/songs.js"
 
 const router = Router()
 
-router.route('/post').post(
+router.route('/postSongs').post(
     upload.fields([
         {name:"src" , maxCount:1},
         { name: "avatar", maxCount: 1 }
@@ -12,7 +12,7 @@ router.route('/post').post(
     postSong
 )
 
-router.route('/get').get(getSongs)
+router.route('/getSongs').get(getSongs)
 
 
 

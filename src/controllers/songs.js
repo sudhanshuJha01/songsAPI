@@ -63,10 +63,11 @@ const postSong = async (req , res)=>{
     }
 
 
-const getSongs = (req , res)=>{
-    res.status(200).json({
-        msg:"ok"
-    })
+const getSongs = async (req , res)=>{
+    const songs = await Songs.find()
+    console.log(songs);
+    res.status(200).json(songs)
+    
 }
 
 export {postSong , getSongs}

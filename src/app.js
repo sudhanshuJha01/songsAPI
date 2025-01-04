@@ -13,7 +13,7 @@ app.use(express.static("public"))
 
 import songRouter from "./routes/songsRoute.js";
 
-app.use('/api/v1/songs' , songRouter)
+app.use('/api/v1' , songRouter)
 
 
 export {app}
