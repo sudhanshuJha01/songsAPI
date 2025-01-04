@@ -6,12 +6,13 @@ const router = Router()
 
 router.route('/post').post(
     upload.fields([
+        {name:"src" , maxCount:1},
         { name: "avatar", maxCount: 1 }
     ]) ,
     postSong
 )
 
-router.route('/songs').get(getSongs)
+router.route('/get').get(getSongs)
 
 
 

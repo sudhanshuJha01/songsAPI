@@ -3,16 +3,15 @@ import fs from 'fs'
 
 
 cloudinary.config({ 
-    cloud_name: process.env.CLODINARY_CLOUD_NAME, 
-    api_key: process.env.CLOUDINARY_API_KEY , 
-    api_secret: process.env.CLODINARY_API_SECRET 
+    cloud_name: "dbgxpgc8i" , 
+    api_key: 224856225668228  , 
+    api_secret: "nkiCT7IvselJ_p5AuufHSEISQRI"
 });
 
 const uploadOnCloudnairy = async (localFilePath)=>{
     try {
         if(!localFilePath) return null;
         const response  = await cloudinary.uploader.upload(localFilePath , {resource_type:'auto'} );
-        console.log(response);
         // fs.unlinkSync(localFilePath);
         return response;
     } catch (error) {
